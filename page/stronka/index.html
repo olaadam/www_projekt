@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Flowers</title>
+    <link rel="shortcut icon" type="image/png" href="images/logo.png">
+    <link rel="stylesheet" href="style.css"> <!-- Link to CSS file -->
+    <style>
+        #navigation {
+            background-color: #333; /* Kolor tła panelu */
+            color: #fff; /* Kolor tekstu */
+            padding: 20px; /* Odstęp wewnętrzny */
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            top: 0;
+            left: 0;
+            z-index: 1000; 
+            width: 100%;
+            position: fixed;
+        }
+
+        #navigation a {
+            color: #fff; /* Kolor linków */
+            text-decoration: none; /* Usunięcie podkreślenia z linków */
+            margin: 0 10px; /* Margines między linkami */
+        }
+
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url(images/laka.png) no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        #garden {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .flower {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+        }
+
+        #logo {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="garden"></div>
+    <!-- Panel nawigacyjny -->
+    <div id="navigation">
+        <!--<img id="logo" src="images/logo.png" alt="Site Logo" draggable ="true"> <!-- Logo of the site -->
+        <div>
+            <a href="/register">Register</a>
+            <a href="/login">Log In</a>
+            <a href="https://rickroll.it/rickroll.mp4" onclick="rickroll(event)">Top Secret</a>
+        </div>
+    </div>
+    <script src="app.js"></script>
+    <script>
+        function rickroll(event) {
+            event.preventDefault();
+            alert("You have been rickrolled!");
+            window.location.href = event.target.href;
+        }
+    </script>
+</body>
+</html>
