@@ -1,0 +1,164 @@
+﻿body {
+    background-image: url('images/laka2.png');
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-size: cover;
+}
+
+#top-panel {
+    background-color: #328a3c;
+    color: #fff;
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.button-container a {
+    color: #fff; /* Kolor tekstu na biały */
+    text-decoration: none; /* Usunięcie podkreślenia */
+    display: block;
+    padding: 10px 10px;
+    text-align: center;
+}
+
+#loginForm, #registerForm {
+    display: none; /* Ukrycie formularzy na początku */
+    position: absolute;
+    top: 50%; /* Wyśrodkowanie formularza w pionie */
+    left: 50%; /* Wyśrodkowanie formularza w poziomie */
+    transform: translate(-50%, -50%); /* Dokładne wyśrodkowanie względem środka */
+    background-color: #b6ed6d;
+    padding: 30px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 500;
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-container input {
+    display: block;
+    width: calc(100% - 40px);
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container button {
+    width: calc(100% - 40px);
+    padding: 10px;
+    background-color: #328a3c;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    max-width: 100%;
+}
+
+.form-container button:hover {
+    background-color: #555;
+}
+
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+#image-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* Adjusted margin */
+    flex-wrap: wrap; /* To wrap elements if necessary */
+}
+
+#image-buttons button {
+    border: none;
+    background: none;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#ogrodnik-img {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    max-width: 20%; /* Obraz nie będzie szerszy niż 20% jego kontenera */
+    height: auto; /* Automatyczna wysokość w proporcji do szerokości */
+    z-index: 100;
+}
+
+
+#image-buttons img {
+    width: 60%; /* Adjusted image size */
+    height: auto;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+#toggle-button {
+    margin: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#toggle-button:hover {
+    background-color: #45a049;
+}
+
+#content {
+    margin-top: 60px; /* Ensure content is below the top panel */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.flower-info {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.button {
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 20px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #328a3c;
+    border: none;
+    border-radius: 10px;
+}

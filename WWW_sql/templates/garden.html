@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garden</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(10, 1fr); /* Adjust the number of columns as needed */
+            grid-template-rows: repeat(10, 1fr); /* Adjust the number of rows as needed */
+            width: 92%;
+            height: 95%;
+            gap: 0;
+        }
+
+        .grid-item {
+            border: 1px solid black; /* Only the outline of the cells */
+            background-color: transparent; /* Transparent background */
+            cursor: pointer; /* Make the cells clickable */
+        }
+
+        .assigned {
+            background-color: rgba(0, 255, 0, 0.5); /* Highlight assigned cells */
+        }
+
+        .button-container {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        .button:hover {
+            background-color: #3e8e41;
+        }
+
+        .button:active {
+            background-color: #3e8e41;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+    </style>
+</head>
+<body>
+    <style>
+        body {
+            background-image: url("static/images/ogrod.png");
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+    <div>
+        <div class="button-container">
+            <a href="{{ url_for('home') }}" class="button">Get Back</a>
+        </div>
+    </div>
+
+    <div class="grid-container">
+        {% for i in range(100) %}
+        <div class="grid-item {% if i in assigned_positions %}assigned{% endif %}" onclick="assignField({{ i }}, '{{ assigned_positions.get(i, '') }}')"></div>
+        {% endfor %}
+    </div>
+
+    <form id="assign-form" method="post" style="display:none;">
+        <input type="hidden" name="position" id="position-input">
+    </form>
+
+    <script>
+        function assignField(position, assignedUser) {
+            if (assignedUser) {
+                alert(assignedUser + ' already planted something here!');
+            } else {
+                if (confirm('Plant your flower here?')) {
+                    var form = document.getElementById('assign-form');
+                    var input = document.getElementById('position-input');
+                    input.value = position;
+                    form.action = '/assign_field/' + position;
+                    form.submit();
+                }
+            }
+        }
+    </script>
+</body>
+</html>
