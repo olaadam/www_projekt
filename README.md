@@ -1,7 +1,9 @@
 # Odpalanie wiersz poleceń, w folderze z projektem komendy:
 
 pip install flask
+
 pip install flask_sqlalchemy
+
 python -m flask run
 
 # co zmienilam
